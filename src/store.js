@@ -27,8 +27,10 @@ const removeEmployee = (employeeId) => {
 }
 
 const fireEmployee = (employeeId) => {
-    type: FIRE_EMPLOYEE,
-    employeeId
+    {
+        type: FIRE_EMPLOYEE,
+        employeeId
+    }
 }
 
 const initialState = {

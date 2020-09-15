@@ -5,8 +5,8 @@ import { assignDepartments } from './store'
 import Department from './Department';
 
 class Departments extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
   }
 
   async componentDidMount() {

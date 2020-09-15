@@ -5,8 +5,8 @@ import {assignEmployee} from './store';
 import Employee from './Employee';
 
 class Employees extends React.Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
   }
 
   async componentDidMount() {
@@ -44,4 +44,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Employee);
+export default connect(mapStateToProps, mapDispatchToProps)(Employees);
