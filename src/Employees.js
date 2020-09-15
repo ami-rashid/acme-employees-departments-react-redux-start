@@ -5,8 +5,8 @@ import {assignEmployee} from './store';
 import Employee from './Employee';
 
 class Employees extends React.Component {
-  constructor(props) {
-    super(props)
+  constructor() {
+    super()
   }
 
   async componentDidMount() {

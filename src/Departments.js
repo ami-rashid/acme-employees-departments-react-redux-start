@@ -5,22 +5,22 @@ import { assignDepartments } from './store'
 import Department from './Department';
 
 class Departments extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
   }
 
   async componentDidMount() {
     const departments = (await (axios.get('/api/departments'))).data;
     this.props.assignDepartments(departments);
+    console.log(this.props)
   }
 
   render() {
     return (
       <ul className='departments'>
-        <Department id = {null}/>
         {this.props.departments.map(department => {
           return (
-            <Department key={department.id} {...departments}/>
+            <Department key={department.id} {...department}/>
           )
         })}
       </ul>

@@ -6,28 +6,28 @@ const REMOVE_EMPLOYEE = 'REMOVE_EMPLOYEE';
 const FIRE_EMPLOYEE = 'FIRE_EMPLOYEE';
 
 const assignDepartments = (departments) => {
-    {
+    return {
         type: ASSIGN_DEPARTMENTS,
         departments
     }
 }
 
 const assignEmployee = (employee) => {
-    {
+    return {
         type: ASSIGN_EMPLOYEE,
         employee
     }
 }
 
 const removeEmployee = (employeeId) => {
-    {
+    return {
         type: REMOVE_EMPLOYEE,
         employeeId
     }
 }
 
 const fireEmployee = (employeeId) => {
-    {
+    return {
         type: FIRE_EMPLOYEE,
         employeeId
     }
