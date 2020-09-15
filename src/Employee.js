@@ -1,9 +1,11 @@
 import React from 'react';
 
-const Employee = ({name, id, departmentId}) => {
+const Employee = ({name, destroyEmployee, removeFromDepartment}) => {
   return (
     <li>
       {name}
+      <button onClick={ ()=> destroyEmployee(employee)}>x</button>
+      <button onClick={ ()=> removeFromDepartment(employee)}>Remove From Department</button>
     </li>
   )
 }
