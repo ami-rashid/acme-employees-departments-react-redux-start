@@ -1,6 +1,34 @@
+import axios from 'axios'
 import React from 'react';
+import { connect } from 'react-redux';
+import { assignDepartments } from './store'
 import Department from './Department';
-const Departments = ({ departments, employees, destroyEmployee, removeFromDepartment })=> {
+
+class Departments extends React.Component {
+  constructor() {
+    super();
+  }
+
+  async componentDidMount() {
+    const departments = (await (axios.get('/api/departments'))).data;
+    this.props.assignDepartments(departments);
+  }
+
+  render() {
+    return (
+      <ul className='departments'>
+        <Department id = {null}/>
+        {this.props.departments.map(department => {
+          return (
+            <Department key={department.id} {...departments}/>
+          )
+        })}
+      </ul>
+    )
+  }
+}
+
+/*const Departments = ({ departments, employees, destroyEmployee, removeFromDepartment })=> {
   return (
     <ul className='departments'>
       <Department destroyEmployee={ destroyEmployee } employees={ employees } />
@@ -19,6 +47,18 @@ const Departments = ({ departments, employees, destroyEmployee, removeFromDepart
       }
     </ul>
   );
+}*/
+
+const mapStateToProps = (state) => {
+  return {departments: state.departments}
 }
 
-export default Departments;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    assignDepartments: function (departments) {
+      dispatch(assignDepartments(departments));
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Departments);

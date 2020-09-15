@@ -1,10 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import axios from 'axios';
-
+import { store }  from './store';
+import { Provider } from 'react-redux';
 import Departments from './Departments';
 import Stats from './Stats';
 
+const App = () => {
+  return <div>
+    <h1>Acme Employees And Departments</h1>
+    <Stats/>
+    <Departments/>
+  </div>
+}
+/*
 class App extends React.Component{
   constructor(){
     super();
@@ -51,6 +59,10 @@ class App extends React.Component{
       </div>
     );
   }
-}
+}*/
 
-ReactDOM.render(<App />, document.querySelector('#root'));
+ReactDOM.render(
+  <Provider store={store}>
+  <App />
+  </Provider>, 
+  document.querySelector('#root'));

@@ -59,4 +59,12 @@ function updateStore (state = initialState, action) {
     }
 }
 
-export default store = createStore(updateStore);
+const store = createStore(updateStore);
+
+export {
+    store,
+    assignDepartments,
+    assignEmployee,
+    removeEmployee,
+    fireEmployee
+}

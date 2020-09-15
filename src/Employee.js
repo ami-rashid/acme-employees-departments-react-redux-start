@@ -1,6 +1,14 @@
 import React from 'react';
 
-const Employee = ({ employee, destroyEmployee, removeFromDepartment })=> {
+const Employee = ({name, id, departmentId}) => {
+  return (
+    <li>
+      {name}
+    </li>
+  )
+}
+
+/*const Employee = ({ employee, destroyEmployee, removeFromDepartment })=> {
   return (
     <li key={ employee.id }>
       { employee.name }
@@ -12,6 +20,6 @@ const Employee = ({ employee, destroyEmployee, removeFromDepartment })=> {
       }
     </li>
   );
-};
+};*/
 
 export default Employee;

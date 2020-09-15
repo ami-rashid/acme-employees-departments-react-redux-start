@@ -1,6 +1,6 @@
 import React from 'react';
 import Employees from './Employees';
-import { connect, connet } from 'react-redux';
+import { connect } from 'react-redux';
 
 const Department = (props) => {
   return (
